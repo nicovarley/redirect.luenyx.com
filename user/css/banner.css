@@ -57,7 +57,13 @@
     display: inline-block;
     min-width: 15px;
     text-align: left;
+    position: relative;
+}
 
+.dots::after {
+    content: '.';
+    position: static;
+    display: inline-block;
     animation-name: dots;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
