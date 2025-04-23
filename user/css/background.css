@@ -1,0 +1,148 @@
+.background-wrapper {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    .rotate-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -100%;
+        left: -100%;
+        width: 300%;
+        height: 300%;
+
+        animation-name: rotateStars;
+        animation-duration: 600s;
+        animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        animation-iteration-count: infinite;
+        transform-origin: center;
+
+        filter: brightness(0.8);
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+
+        .background-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            background-image: url('../images/space_ftu_pexels-dot-com@pichlokei.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            animation: zoomStars 300s linear infinite;
+        }
+    }
+
+    .stardust-overlay {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+
+        background-image: url('../images/stardust_cc0_pexels-dot-com@pixabay.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        mix-blend-mode: lighten;
+        filter: brightness(0.8); 
+
+        animation: zoomStardust 240s ease-in-out infinite;
+    }
+}
+
+@keyframes rotateStars {
+    0% {
+        transform: rotate(0deg) scale(1);
+        animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    20% {
+        transform: rotate(72deg) scale(1.05);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    40% {
+        transform: rotate(144deg) scale(1.15);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    60% {
+        transform: rotate(216deg) scale(1.075);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    80% {
+        transform: rotate(288deg) scale(1.02);
+        animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes zoomStars {
+    0% {
+        transform: scale(1);
+        filter: brightness(0.8);
+    }
+    20% {
+        transform: scale(1.05);
+        filter: brightness(0.85);
+    }
+    40% {
+        transform: scale(1.1);
+        filter: brightness(0.9);
+    }
+    60% {
+        transform: scale(1.05);
+        filter: brightness(0.85);
+    }
+    80% {
+        transform: scale(1);
+        filter: brightness(0.8);
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(0.8);
+    }
+}
+
+@keyframes zoomStardust {
+    0% {
+        opacity: 0.5; 
+        transform: scale(1); 
+        background-position: 0% 0%; 
+        filter: brightness(1.2) contrast(1.3) hue-rotate(5deg);
+    }
+    20% {
+        opacity: 0.6; 
+        transform: scale(1.05) rotate(0.5deg);
+        background-position: 5% 2%; 
+        filter: brightness(1.3) contrast(1.4) hue-rotate(0deg);
+    }
+    40% {
+        opacity: 0.7;
+        transform: scale(1.1) (1deg);
+        background-position: 10% 5%;
+        filter: brightness(1.4) contrast(1.5) saturate(1.2) hue-rotate(-5deg);
+    }
+    60% {
+        opacity: 0.7;
+        transform: scale(1.15) rotate(0.5deg);
+        background-position: 5% 10%;
+        filter: brightness(1.4) contrast(1.5) saturate(1.1) hue-rotate(-2deg);
+    }
+    80% {
+        opacity: 0.6;
+        transform: scale(1.1) rotate(0deg);
+        background-position: 2% 5%;
+        filter: brightness(1.3) contrast(1.4) hue-rotate(2deg);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1) rotate(0deg);
+        background-position: 0% 0%;
+        filter: brightness(1.2) contrast(1.3) hue-rotate(5deg);
+    }
+}
