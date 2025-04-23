@@ -1,0 +1,7 @@
+services:
+  site:
+    build:
+      context: ..
+      dockerfile: dockerfile
+    ports: 44448:44448
+    restart: unless-stopped
