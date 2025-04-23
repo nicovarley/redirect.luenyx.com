@@ -1,13 +1,13 @@
 from flask import Flask
 
 
-server = Flask(__name__, static_folder="..client")
+server = Flask(__name__, static_url_path='', static_folder='../user')
 
 
-@server.route("/")
-def serve(path):
+@server.route("/", defaults={"path": ""})
+def serveringing(path):
     """Serve the basic client... always."""
-    return server.send_static_file('../user/index.html')
+    return server.send_static_file('index.html')
 
 
 if __name__ == "__main__":
