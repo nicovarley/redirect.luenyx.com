@@ -6,6 +6,8 @@ COPY . .
 
 RUN pip install --no-cache-dir -r ./deploy/server-python-dependencies.txt
 
+RUN python ./deploy/build-production-css.py
+
 EXPOSE 44448
 
 CMD ["gunicorn", "--bind", "0.0.0.0:44448", "--workers", "2", "server.main:server"]
