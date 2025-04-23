@@ -4,8 +4,8 @@ WORKDIR /redirect.luenyx.com
 
 COPY . .
 
-RUN pip install --no-cache-dir -r ./deploy/requirements.txt
+RUN pip install --no-cache-dir -r ./deploy/server-python-dependencies.txt
 
-EXPOSE 44444
+EXPOSE 44448
 
-# CMD []
+CMD ["gunicorn", "--bind", "0.0.0.0:44448", "--workers", "2", "server.main:server"]
