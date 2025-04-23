@@ -1,0 +1,49 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    place-content: center;
+
+    .logo-container {
+        display: flex;
+        justify-content: center;
+
+        .logo {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+
+            animation-name: logoFadeIn, logoGlow;
+            animation-duration: 2s, 4s;
+            animation-timing-function: ease-out, ease-in-out;
+            animation-iteration-count: 1, infinite;
+            animation-fill-mode: forwards, alternate;
+        }
+    }
+}
+
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoGlow {
+    0% {
+        filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+    }
+    100% {
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+    }
+}
