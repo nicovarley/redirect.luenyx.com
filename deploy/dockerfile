@@ -1,0 +1,11 @@
+FROM python:3.13-alpine
+
+WORKDIR /redirect.luenyx.com
+
+COPY . .
+
+RUN pip install --no-cache-dir -r ./deploy/requirements.txt
+
+EXPOSE 44444
+
+# CMD []
