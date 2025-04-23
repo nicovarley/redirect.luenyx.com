@@ -2,7 +2,8 @@
     position: relative;
     z-index: 1;
 
-    text-align: center; 
+    text-align: center;
+    min-width: 500px;
     max-width: 90%;
     padding: 2rem;
     margin: 1rem auto;
@@ -101,6 +102,8 @@
 @media (max-width: 768px) {
     .redirect-container {
         padding: 1.5rem;
+        min-width: 90%;
+        width: 90%;
     }
 
     .redirect-title {
@@ -122,6 +125,8 @@
 @media (max-width: 480px) {
     .redirect-container {
         padding: 1rem;
+        min-width: 90%;
+        width: 90%;
     }
 
     .redirect-title {
