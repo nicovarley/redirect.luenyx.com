@@ -12,7 +12,7 @@ for file in listdir(css_dir):
     if not isfile(filepath): continue  # has someone messed with the directory?
 
     css_content = open(filepath, 'r', encoding='utf-8').read()
-    fixed_content = sub(r'../', '', css_content)  # remove parent directory lookups when importing images (because the resulting file will be in the parent dir)
+    fixed_content = sub(r'\.\.\/', '', css_content)  # remove parent directory lookups when importing images (because the resulting file will be in the parent dir)
     new_css_content.append(fixed_content)
 
 open(join('user', 'styles.css'), 'w', encoding='utf-8').write('\n'.join(new_css_content))
