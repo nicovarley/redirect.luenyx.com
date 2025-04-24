@@ -1,0 +1,8 @@
+services:
+  redirect-site:
+    build:
+      context: ..
+      dockerfile: deploy/dockerfile
+    ports: 
+      - 44448:44448
+    restart: unless-stopped
