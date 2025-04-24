@@ -1,5 +1,5 @@
 services:
-  site:
+  redirect-site:
     build:
       context: ..
       dockerfile: deploy/dockerfile
