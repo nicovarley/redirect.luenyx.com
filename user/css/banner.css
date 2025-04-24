@@ -94,20 +94,14 @@
     0% {
         content: '';
     }
-    16.67% {
+    25% {
         content: '.';
-    }
-    33.34% {
-        content: '..';
     }
     50% {
-        content: '...';
-    }
-    66.68% {
         content: '..';
     }
-    83.35% {
-        content: '.';
+    75% {
+        content: '...';
     }
     100% {
         content: '';
